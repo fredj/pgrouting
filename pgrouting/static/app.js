@@ -1,11 +1,13 @@
 var mapPanel;
+
 Ext.onReady(function() {
-    var map = new OpenLayers.Map();
-    var osm = new OpenLayers.Layer.OSM("Simple OSM Map");
 
-    map.addLayer(osm);
-
-//     mapPanel = new GeoExt.MapPanel({
-//         map: map
-//     });
+    mapPanel = new GeoExt.MapPanel({
+        renderTo: "map",
+        map: {
+             layers: [new OpenLayers.Layer.OSM("Simple OSM Map")]
+        },
+        center: [245300, 5070600],
+        zoom: 12
+    });
 });
