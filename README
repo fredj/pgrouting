@@ -11,3 +11,7 @@ install the pgrouting code:
 
 run the server:
   python pgrouting/runserver.py
+
+
+resources:
+  http://flask.pocoo.org/docs/
