@@ -1,8 +1,12 @@
 from flask import request
 from pgrouting import app
+from pgrouting.utils import jsonify
 
 @app.route('/routing')
+@jsonify
 def routing():
-    start = request.args.get('from')
-    end = request.args.get('to')
-    return "%s -> %s"%(start, end)
+    return {
+        'from': request.args.get('from'), 
+        'to': request.args.get('to')
+    }
+
