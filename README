@@ -1,0 +1,17 @@
+pgrouting FOSS4G 2010 workshop.
+
+install a python virtual env:
+  virtualenv --no-site-packages venv
+  source venv/bin/activate
+
+install the pgrouting code:
+  git clone git://github.com/fredj/pgrouting.git
+  cd pgrouting 
+  python setup.py develop
+
+run the server:
+  python pgrouting/runserver.py
+
+
+resources:
+  http://flask.pocoo.org/docs/
