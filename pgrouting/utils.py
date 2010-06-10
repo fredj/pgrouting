@@ -1,12 +1,9 @@
-from functools import wraps
-import json
+from json import dumps
 from flask import Response
 
 def jsonify(f):
-    @wraps(f)
-    def decorated_function(*args, **kwargs):
-        return Response(json.dumps(f(*args, **kwargs)), 
-                        mimetype='application/json')
-    return decorated_function
+    def inner(*args, **kwargs):
+        return Response(dumps(f(*args, **kwargs)), mimetype='application/json')
+    return inner
 
 
