@@ -1,12 +1,10 @@
-from flask import request
+from flask import request, jsonify
 from pgrouting import app
-from pgrouting.utils import jsonify
 
-@app.route('/routing')
-@jsonify
-def routing():
-    return {
+@app.route('/routing<format>')
+def routing(format):
+    return jsonify({
         'from': request.args.get('from'), 
         'to': request.args.get('to')
-    }
+    })
 
